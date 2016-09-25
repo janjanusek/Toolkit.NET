@@ -1,0 +1,5 @@
+C:\Users\janja\Source\Repos\NetExtensionsCsharp\Toolkit.NET\Toolkit.NET\obj\Debug\Toolkit.NET.csprojResolveAssemblyReference.cache
+C:\Users\janja\Source\Repos\NetExtensionsCsharp\Toolkit.NET\Toolkit.NET\bin\Debug\Toolkit.NET.exe
+C:\Users\janja\Source\Repos\NetExtensionsCsharp\Toolkit.NET\Toolkit.NET\bin\Debug\Toolkit.NET.pdb
+C:\Users\janja\Source\Repos\NetExtensionsCsharp\Toolkit.NET\Toolkit.NET\obj\Debug\Toolkit.NET.exe
+C:\Users\janja\Source\Repos\NetExtensionsCsharp\Toolkit.NET\Toolkit.NET\obj\Debug\Toolkit.NET.pdb
