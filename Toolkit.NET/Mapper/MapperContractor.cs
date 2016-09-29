@@ -73,6 +73,8 @@ namespace Toolkit.NET.Mapper
 
         private void MapProperties(ref TMapFrom paMapFrom, ref TMapTo paMapTo)
         {
+            if (paMapFrom == null || paMapTo == null)
+                return;
             var propertiesFrom = paMapFrom.GetType().GetProperties();
 
             foreach (var propertyInfo in propertiesFrom)
