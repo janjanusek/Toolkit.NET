@@ -63,18 +63,19 @@ namespace Toolkit.NET.Mapper
 
         /// <summary>
         /// Method which maps properties from paMapFrom instance to paMapTo instance
+        /// If is one of the instances null then method will do nothing
         /// </summary>
         /// <param name="paMapFrom"></param>
         /// <param name="paMapTo"></param>
         public void MapTypes(ref TMapFrom paMapFrom, ref TMapTo paMapTo)
         {
+            if (paMapFrom == null || paMapTo == null)
+                return;
             MapProperties(ref paMapFrom, ref paMapTo);
         }
 
         private void MapProperties(ref TMapFrom paMapFrom, ref TMapTo paMapTo)
         {
-            if (paMapFrom == null || paMapTo == null)
-                return;
             var propertiesFrom = paMapFrom.GetType().GetProperties();
 
             foreach (var propertyInfo in propertiesFrom)
