@@ -11,17 +11,14 @@ namespace Toolkit.NET
     {
         public static void Main(string[] paArgs)
         {
-            Mapper.Mapper.Instance.CreateContract<Car, Bus>(new MapperSpectialContract<Car, Bus>(
-                nameof(Car.Wheels),
-                nameof(Bus.Wheels),
-                (car1, bus1) => { bus1.Wheels = car1.Wheels.ToString(); }));
+            Mapper.Mapper.Instance.CreateContract<Car, Bus>();
 
             var car = new Car()
             {
                 Name = "Toyota",
                 Color = "Red",
                 NameOfDriver = "John",
-                Wheels = 4
+                Wheels = 4.ToString()
             };
             var bus = new Bus();
 
@@ -43,7 +40,7 @@ namespace Toolkit.NET
     {
         public string Name { get; set; }
         public string Color { get; set; }
-        public int Wheels { get; set; }
+        public string Wheels { get; set; }
         public string NameOfDriver { get; set; }
 
         public override string ToString()
@@ -56,7 +53,7 @@ namespace Toolkit.NET
     {
         public string Name { get; set; }
         public string Color { get; set; }
-        public string Wheels { get; set; }
+        public int Wheels { get; set; }
         public string NameOfDriver { get; set; }
 
         public override string ToString()

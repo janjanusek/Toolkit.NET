@@ -15,6 +15,7 @@ namespace Toolkit.NET.Mapper
     public class MapperContractor<TMapFrom, TMapTo>
     {
         public List<MapperSpectialContract<TMapFrom, TMapTo>> Contracts { get; private set; }
+        public List<Func<object, object>> Converters { get; private set; }
 
         /// <summary>
         /// Constructor for MapperContractor
@@ -37,12 +38,25 @@ namespace Toolkit.NET.Mapper
                         Contracts.Add(new MapperSpectialContract<TMapFrom, TMapTo>(fromProperty.Name, toProperty.Name,
                             (fromObject, toObject) =>
                             {
-                                toProperty.SetValue(toObject, fromProperty.GetValue(fromObject));
+                                object valueFrom = this.ConvertType(fromProperty.GetValue(fromObject),
+                                    toProperty.PropertyType);
+                                toProperty.SetValue(toObject, valueFrom);
                             }));
                 }
                 else
                     Contracts.AddRange(contracts);
             }
+        }
+
+        /// <summary>
+        /// Method automatically converts standart types
+        /// </summary>
+        /// <param name="paFromValue"></param>
+        /// <param name="paToValueType"></param>
+        /// <returns></returns>
+        public object ConvertType(object paFromValue, Type paToValueType)
+        {
+            return paFromValue.GetType() == paToValueType ? paFromValue : System.Convert.ChangeType(paFromValue, paToValueType);
         }
 
         /// <summary>
