@@ -15,7 +15,6 @@ namespace Toolkit.NET.Mapper
     public class MapperContractor<TMapFrom, TMapTo>
     {
         public List<MapperSpectialContract<TMapFrom, TMapTo>> Contracts { get; private set; }
-        public List<Func<object, object>> Converters { get; private set; }
 
         /// <summary>
         /// Constructor for MapperContractor
