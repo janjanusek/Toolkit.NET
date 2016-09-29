@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Toolkit.NET.Extensions.Type;
 
 namespace Toolkit.NET.Mapper
 {
@@ -55,6 +56,8 @@ namespace Toolkit.NET.Mapper
         /// <returns></returns>
         public object ConvertType(object paFromValue, Type paToValueType)
         {
+            if (paFromValue == null)
+                return paToValueType.GetDefaultValue();
             return paFromValue.GetType() == paToValueType ? paFromValue : System.Convert.ChangeType(paFromValue, paToValueType);
         }
 

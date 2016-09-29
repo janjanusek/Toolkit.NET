@@ -4,7 +4,7 @@ namespace Toolkit.NET.Extensions
 {
     public static class Extension
     {
-        public static string ReadDescription(Type paExtensionClassType)
+        public static string ReadDescription(System.Type paExtensionClassType)
         {
             return $"Please read description of {paExtensionClassType.Name} extension.";
         }
