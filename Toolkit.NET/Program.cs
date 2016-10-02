@@ -11,7 +11,14 @@ namespace Toolkit.NET
     {
         public static void Main(string[] paArgs)
         {
-            Mapper.Mapper.Instance.CreateContract<Car, Bus>();
+            Mapper.Mapper.Instance.CreateContract<Car, Bus>(
+                new MapperSpectialContract<Car, Bus>(
+                    nameof(Car.Name),
+                    nameof(Bus.Name),
+                    (car1, bus1) =>
+                    {
+                        bus1.Name = car1.Name + " bus type";
+                    }));
 
             var car = new Car()
             {
