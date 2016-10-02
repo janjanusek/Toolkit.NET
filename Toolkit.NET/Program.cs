@@ -11,15 +11,17 @@ namespace Toolkit.NET
     {
         public static void Main(string[] paArgs)
         {
+            // frist create contract between specified types such as Car and Bus
             Mapper.Mapper.Instance.CreateContract<Car, Bus>(
-                new MapperSpectialContract<Car, Bus>(
-                    nameof(Car.Name),
-                    nameof(Bus.Name),
-                    (car1, bus1) =>
+                new MapperSpectialContract<Car, Bus>( // if you need you can specify special contract between custom properties
+                    nameof(Car.Name), // Let's say that we have Car with property Name
+                    nameof(Bus.Name), // and we have Bus with the same name but we want to create special behavior with mapping
+                    (car1, bus1) => // after specifying two properties you must specify what must happen with them
                     {
-                        bus1.Name = car1.Name + " bus type";
+                        bus1.Name = car1.Name + " bus type"; // we want to append to car name ' bus type' to see that bus got our special value on Name property
                     }));
 
+            // now create new instance of car filled with some values
             var car = new Car()
             {
                 Name = "Toyota",
@@ -27,15 +29,17 @@ namespace Toolkit.NET
                 NameOfDriver = "John",
                 Wheels = 4.ToString()
             };
+
+            // now we want to map this values to bus with the same properties but with different value types
             var bus = new Bus();
 
             Console.WriteLine("=========================================");
-            Console.WriteLine(car);
-            Console.WriteLine(bus);
+            Console.WriteLine(car); // first we will see data in car
+            Console.WriteLine(bus); // then we will see data in empty bus
 
             Console.WriteLine("=========================================");
             Console.WriteLine("Mapping objects");
-            Mapper.Mapper.Instance.Map(ref car, ref bus);
+            Mapper.Mapper.Instance.Map(ref car, ref bus); // now we will mapp data from existing instance of car to existing instance of bus
             Console.WriteLine("=========================================");
             Console.WriteLine(car);
             Console.WriteLine(bus);
