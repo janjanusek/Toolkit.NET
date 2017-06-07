@@ -62,6 +62,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithms\PathFinding\Dijkstra\DijkstrasAlgorithm.cs" />
+    <Compile Include="Algorithms\PathFinding\IGraph.cs" />
+    <Compile Include="Algorithms\PathFinding\INode.cs" />
+    <Compile Include="Algorithms\PathFinding\Path.cs" />
+    <Compile Include="Algorithms\PathFinding\PathFindingAlgorithm.cs" />
     <Compile Include="Extensions\Type\DefaultValue.cs" />
     <Compile Include="Parrallel\IndexedBackgroundWorker.cs">
       <SubType>Component</SubType>
@@ -112,7 +117,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Algorithms\Metaheuristics\" />
-    <Folder Include="Algorithms\PathFinding\" />
     <Folder Include="DataStructures\" />
     <Folder Include="DllMemoryManagement\" />
   </ItemGroup>
