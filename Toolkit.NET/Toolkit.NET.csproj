@@ -62,11 +62,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Algorithms\Metaheuristics\SimulatedAnnealing\ISolution.cs" />
+    <Compile Include="Algorithms\Metaheuristics\SimulatedAnnealing\MedianProblem\MedianResult.cs" />
+    <Compile Include="Algorithms\Metaheuristics\SimulatedAnnealing\MedianProblem\MedianSimulatedAnnealing.cs" />
+    <Compile Include="Algorithms\Metaheuristics\SimulatedAnnealing\MedianProblem\MedianSolution.cs" />
+    <Compile Include="Algorithms\Metaheuristics\SimulatedAnnealing\SimAnneal.cs" />
     <Compile Include="Algorithms\PathFinding\Dijkstra\DijkstrasAlgorithm.cs" />
     <Compile Include="Algorithms\PathFinding\IGraph.cs" />
     <Compile Include="Algorithms\PathFinding\INode.cs" />
     <Compile Include="Algorithms\PathFinding\Path.cs" />
     <Compile Include="Algorithms\PathFinding\PathFindingAlgorithm.cs" />
+    <Compile Include="DataStructures\Comparators\ComparableExt.cs" />
+    <Compile Include="DataStructures\Comparators\Compare.cs" />
+    <Compile Include="DataStructures\Comparators\EnumeratedComparer.cs" />
+    <Compile Include="DataStructures\Comparators\ICompare.cs" />
+    <Compile Include="DataStructures\Threes\AvlBinaryTree.cs" />
+    <Compile Include="DataStructures\Threes\Binary\BinaryPreOrderEnumerator.cs" />
+    <Compile Include="DataStructures\Threes\Binary\BinaryThree.cs" />
+    <Compile Include="DataStructures\Threes\Binary\ChildrensSide.cs" />
+    <Compile Include="DataStructures\Threes\Binary\ITree.cs" />
+    <Compile Include="DataStructures\Threes\Node\BinaryTreeNode.cs" />
+    <Compile Include="DataStructures\Threes\Node\ITreeNode.cs" />
+    <Compile Include="DataStructures\Threes\Node\NodeBase.cs" />
     <Compile Include="Extensions\Type\DefaultValue.cs" />
     <Compile Include="Parrallel\IndexedBackgroundWorker.cs">
       <SubType>Component</SubType>
@@ -116,8 +133,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Algorithms\Metaheuristics\" />
-    <Folder Include="DataStructures\" />
     <Folder Include="DllMemoryManagement\" />
   </ItemGroup>
   <ItemGroup>

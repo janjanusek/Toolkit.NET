@@ -29,13 +29,13 @@ namespace Toolkit.NET.Parrallel
             _countOfWorkingThreads = 0;
         }
 
-        public void Execute(TArrayType[] paArray, Action<TArrayType> paExecution)
+        public void Execute(TArrayType[] paArray, Action<TArrayType, int> paExecution)
         {
             ExecuteAsync(paArray, paExecution);
-            while (IsExecuting) { }
+            while (IsExecuting) { Thread.Sleep(250); }
         }
 
-        public void ExecuteAsync(TArrayType[] paArray, Action<TArrayType> paExecution)
+        public void ExecuteAsync(TArrayType[] paArray, Action<TArrayType, int> paExecution)
         {
             if (IsExecuting)
                 throw new Exception("Parallel executor is already executing.");
@@ -75,7 +75,7 @@ namespace Toolkit.NET.Parrallel
 
             for (int j = parameter.StartIndex; j < parameter.EndIndexExclusive && j < parameter.Array.Length; j++)
             {
-                parameter.Action.Invoke(parameter.Array[j]);
+                parameter.Action.Invoke(parameter.Array[j], j);
             }
         }
 
@@ -104,6 +104,6 @@ namespace Toolkit.NET.Parrallel
         public TArrayType[] Array { get; set; }
         public int StartIndex { get; set; }
         public int EndIndexExclusive { get; set; }
-        public Action<TArrayType> Action { get; set; }
+        public Action<TArrayType, int> Action { get; set; }
     }
 }
