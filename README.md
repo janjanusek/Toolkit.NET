@@ -18,4 +18,4 @@ Format from string is extended
 you can set your own brackets
 
 I made this extension for those who need put some values into string which 
-already contains original string Fromat brackets {} such as HTML file with style.
+already contains original string Format brackets {} such as HTML file with style.
