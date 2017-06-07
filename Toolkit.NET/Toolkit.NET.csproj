@@ -84,7 +84,13 @@
     <Compile Include="DataStructures\Threes\Node\BinaryTreeNode.cs" />
     <Compile Include="DataStructures\Threes\Node\ITreeNode.cs" />
     <Compile Include="DataStructures\Threes\Node\NodeBase.cs" />
+    <Compile Include="DllMemoryManagement\DynamicValuePointer.cs" />
+    <Compile Include="DllMemoryManagement\IntPtrWrapper.cs" />
+    <Compile Include="DllMemoryManagement\IPointerAllocation.cs" />
+    <Compile Include="DllMemoryManagement\JaggedPointer.cs" />
+    <Compile Include="Extensions\Object\ObjectExtensions.cs" />
     <Compile Include="Extensions\Type\DefaultValue.cs" />
+    <Compile Include="Parrallel\AsyncWrapper.cs" />
     <Compile Include="Parrallel\IndexedBackgroundWorker.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -132,9 +138,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DllMemoryManagement\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
